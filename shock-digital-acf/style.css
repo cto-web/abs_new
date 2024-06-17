@@ -1,0 +1,706 @@
+/*
+Theme Name: ABS WP
+Theme URI: https://www.[URL website]
+Description: Maatwerk Wordpress thema voor ABS
+Version: 1.0
+Author: SHOCK Digital
+Author URI: https://www.shockdigital.nl/
+*/
+html{
+	scroll-behavior: smooth;
+}
+body{
+	font-family: "neue-haas-grotesk-display", sans-serif;
+	font-size: 18px;
+	font-weight: 500;
+	line-height: 32.4px;
+	letter-spacing: 0.02em;
+	color:#0A1B46;
+	margin:0;
+	padding:0;
+	background-color:#F7F5ED;
+	overflow-x:hidden;
+}
+img{
+	width:100%;
+	height:auto;
+}
+ul{
+	margin:0;
+	padding-left: 20px;
+}
+ul li::marker {
+	color: #0A1B46;
+}
+a{
+	text-decoration:none;
+	color:#733C74;
+}
+h1, h2, h3, h4, h5, h6 {
+	font-family: "neue-haas-grotesk-display", sans-serif;
+	font-weight: 400;
+	letter-spacing: 0.04em;
+	text-align: left;
+}
+h1{
+	font-size: 56px;
+	line-height: 72.8px;
+}
+h2{
+	font-size: 48px;
+	line-height: 62.4px;
+}
+h3{
+	font-size: 24px;
+	line-height: 31.2px;
+}
+h4{
+	font-size: 18px;
+	font-weight: 600;
+	line-height: 27px;
+	letter-spacing: 0.02em;
+}
+img{
+	vertical-align:bottom;
+}
+.order-1{
+	order:1;
+}
+.order-2{
+	order:2;
+}
+.button{
+	color:#192D60;
+	background: #84DAFF;
+	padding: 12px 24px 12px 24px;
+	border-radius: 8px 8px 8px 0px;
+	font-family: "neue-haas-grotesk-display", sans-serif;
+	font-size: 16px;
+	font-weight: 600;
+	line-height: 19.2px;
+	letter-spacing: 0.04em;
+	display:inline-block;
+}
+.button.dark{
+	color:#F7F5ED;
+	background: #304995;
+	padding: 12px 24px 12px 24px;
+	border-radius: 8px 8px 8px 0px;
+	font-family: "neue-haas-grotesk-display", sans-serif;
+	font-size: 16px;
+	font-weight: 600;
+	line-height: 19.2px;
+	letter-spacing: 0.04em;
+	display:inline-block;
+}
+.container{
+    padding-right: calc((100% - 1315px) / 2);
+    padding-left: calc((100% - 1315px) / 2);
+}
+.container-sm{
+    padding-right: calc((100% - 1000px) / 2);
+    padding-left: calc((100% - 1000px) / 2);
+}
+.d-flex{
+	display:flex;
+}
+.flex-wrap{
+	flex-wrap:wrap;
+}
+.align-items-center{
+	align-items:center;
+}
+.justify-between{
+	justify-content:space-between;
+}
+.justify-center{
+	justify-content:center;
+}
+.heading-style{
+	position:relative;
+	padding-bottom: 6px;
+}
+.heading-style:after{
+	width: 36px;
+	height: 2px;
+	background: #304995;
+	content:'';
+	position:absolute;
+	left:0;
+	bottom:0;
+}
+.heading-style.white:after{
+	background:#ffffff;
+}
+
+/* Header */
+.site-header{
+	padding:1rem 0;
+	background: #0A1B46;
+}
+.site-header .head-logo .logo{
+	font-size: 42px;
+	font-weight: 600;
+	line-height: 63px;
+	letter-spacing: 0.02em;
+	display:block;
+	color:#fff;
+	text-transform:uppercase;
+	line-height: 1;
+    margin-bottom: 5px;
+}
+.site-header .head-logo .slogan{
+	font-size: 14px;
+	font-weight: 500;
+	line-height: 25.2px;
+	letter-spacing: 0.02em;
+	color:#fff;
+	text-transform:uppercase;
+}
+#primary-menu{
+	margin:0;
+	padding:0;
+	list-style-type:none;
+}
+#primary-menu li{
+	margin:0;
+	padding:0 15px;
+	display:inline-block;
+	vertical-align:middle;
+	margin-right:-5px;
+}
+#primary-menu li:first-child{
+	padding-left:0;
+}
+#primary-menu li:last-child{
+	padding-right:0;
+}
+#primary-menu li a{
+	color:#fff;
+	font-size: 18px;
+	font-weight: 500;
+	line-height: 32.4px;
+	letter-spacing: 0.02em;
+}
+#primary-menu .btn-nav a{
+	color:#192D60 !important;
+	background: #84DAFF;
+	padding: 12px 24px 12px 24px;
+	border-radius: 8px 8px 8px 0px;
+	font-family: "neue-haas-grotesk-display", sans-serif;
+	font-size: 16px;
+	font-weight: 600;
+	line-height: 19.2px;
+	letter-spacing: 0.04em;
+	display:inline-block;
+}
+
+/* Tabs */
+.tabs-box{
+	padding:120px 0;
+}
+.tabs-container {
+    display: flex;
+	justify-content:space-between;
+	align-items:center;
+}
+.tabs-box .tabs {
+    width: 332px;
+}
+.tabs-box .tab {
+    cursor: pointer;
+	padding: 12px 24px 12px 24px;
+	border-radius: 8px;
+	background: #FFFEFB;
+	margin-bottom:8px;
+	display: flex;
+    justify-content: space-between;
+	align-items:center;
+	position:relative;
+}
+.tabs-box .tab p{
+	font-size: 18px;
+	font-weight: 500;
+	line-height: 32.4px;
+	letter-spacing: 0.02em;	
+	margin:0;
+	color: #192D60;
+}
+.tabs-box .tab .tab-image{
+    height: 26px;
+}
+.tabs-box .tab .tab-image img{
+	vertical-align: inherit;
+}
+.tabs-box .tab.active .tab-image{
+	position:absolute;
+	right:24px;
+	top:50%;
+	transform:translate(0,-50%);
+	height: 48px;
+}
+.tabs-box .tab.active {
+    background-color: #192D60;
+}
+.tabs-box .tab.active p{
+	color: #F7F5ED;
+}
+.tabs-content {
+	width:569px;
+}
+.tabs-content .tab-content {
+    display: none;
+}
+.tabs-content .tab-content h2{
+	margin-top:0;
+    margin-bottom: 15px;
+}
+.tab-content.active {
+    display: block;
+}
+
+
+/* Hero Box */
+.hero-box{
+	position:relative;
+	z-index:2;
+    margin-bottom: 300px;
+}
+.hero-box .hero-parents{
+	background: #0A1B46;
+	position:relative;
+	z-index:3;
+}
+.hero-box .hero-parents .hero-content-inner{
+    padding-top: 125px;
+}
+.hero-box .container{
+	position:relative;
+	z-index:10;
+}
+.hero-box .ellipse-shape{
+	width:100%;
+	position:absolute;
+    bottom: -300px;
+	left:0;
+	z-index:1;
+}
+.hero-box .title,.hero-box .list li,.hero-box .content{
+	color:#fff;
+}
+.hero-box .title{
+	margin:0;
+}
+.hero-box .content{
+	margin-bottom:2rem;
+}
+.hero-box .content p{
+	margin-top:0;
+}
+.hero-box:before{
+	content:url(https://dev.logo4life.nl/abs/wp-content/uploads/2024/06/Ellipse-1.svg);
+	position:absolute;
+	width: 476px;
+	height: 633px;
+	top: -112px;
+	left: 0;
+	z-index: 5;
+}
+.hero-box:after{
+	content:url(https://dev.logo4life.nl/abs/wp-content/uploads/2024/06/Ellipse-2.svg);
+	position:absolute;
+	width: 476px;
+	height: 476px;
+	top: -112px;
+	right: 0;
+	z-index: 5;
+}
+.hero-content-inner{
+	width:928px;
+}
+.hero-box .list{
+	display:flex;
+	flex-wrap:wrap;
+	justify-content:space-between;
+	column-gap:4rem;
+}
+.hero-box .list li{
+	width:calc(50% - calc(2rem + 40px));
+	font-size: 18px;
+	font-weight: 500;
+	line-height: 32.4px;
+	letter-spacing: 0.02em;
+	padding-left:40px;
+	position:relative;
+	margin-bottom: 12px;
+}
+.hero-box .list{
+	list-style-type:none;
+	padding:0;
+}
+.hero-box .list li:before{
+	content:'';
+	width:24px;
+	height:24px;
+	position:absolute;
+	left:0;
+	top:5px;
+	background-image:url(https://dev.logo4life.nl/abs/wp-content/uploads/2024/06/check.svg);
+	background-size:24px;
+	background-repeat:no-repeat;
+	background-position:center;
+}
+.hero-box .button-wrap{
+	margin-top:2rem;
+}
+
+/* ABS Funds Box */
+.funds-box{
+    margin-top: -165px;
+}
+.funds-box .funds-content-inner{
+	width:1000px;
+	margin:0 auto 0px;
+	position:relative;
+	z-index:20;
+	text-align:center;
+}
+.funds-box .funds-content-inner .button-wrap{
+	margin-top: -45px;
+}
+
+/* Image Box */
+.image-box{
+	padding:140px 0;
+}
+.image-box .d-flex .content{
+	width: 59%;
+}
+.image-box .d-flex .content .editor p{
+	margin-top:0;
+}
+.image-box .d-flex .content .button-wrap{
+	margin-top:2rem;
+}
+.image-box .d-flex .content h2{
+	margin-top:0;
+	margin-bottom: 22px;
+	padding-bottom: 5px;
+}
+
+.image-box .d-flex .image{
+	width:332px;
+}
+.image-box .d-flex .image img{
+	height:464px;
+	object-fit:cover;
+	object-position:center;
+	border-radius:16px 16px 16px 0px;
+}
+.image-box .d-flex .image.order-2 img{
+	border-radius:16px 16px 0 16px;
+}
+
+/* Cost Box */
+.cost-box{
+	padding:140px 0;
+}
+.cost-box .cost-headline h2{
+	margin-bottom:10px;
+	margin-top:0;
+}
+.cost-box .cost-headline{
+	margin-bottom:30px;
+}
+.cost-box .table-parent .table-inner{
+	display:flex;
+	flex-wrap:wrap;
+	border-bottom:2px solid #192D60;
+}
+.cost-box .table-parent .table-inner:last-child{
+	border-bottom:none;
+}
+.cost-box .table-parent {
+	border:2px solid #192D60;
+	border-radius: 16px 16px 16px 0px;
+	overflow: hidden;
+}
+.cost-box .table-parent .table-inner .title{
+	width:256px;
+    padding: 13px 20px 13px 24px;
+	background: linear-gradient(90deg, #ABE6FF 0%, #84DAFF 100%);
+	font-weight: 600;
+	line-height: 27px;
+	color: #192D60;
+}
+.cost-box .table-parent .table-inner .content{
+	width: calc(100% - calc(256px + 88px));
+	padding: 13px 20px 13px 24px;
+}
+.cost-box .table-parent .table-inner .content p{
+	margin-top:0;
+	color: #192D60;
+}
+.cost-box .table-bottom-content{
+	font-style: italic;
+	margin-top:30px;
+	line-height: 27px;
+}
+
+/* About Box */
+.about-box{
+	padding-top:120px;
+	position:relative;
+	background: #0A1B46;
+	margin-bottom: 275px;
+}
+.about-box:before{
+	content:url(https://dev.logo4life.nl/abs/wp-content/uploads/2024/06/Ellipse-4.svg);
+	position:absolute;
+	top: 0%;
+	left: 50%;
+	transform:translate(-50%,0);
+	z-index: 5;
+}
+.about-box .ellipse-shape{
+	width:100%;
+	position:absolute;
+	bottom: -100px;
+	left:0;
+    z-index: 0;
+}
+.about-box .d-flex{
+	justify-content:space-between;
+}
+.about-box .left-content,.about-box .right-content{
+	color:#ffffff;
+	width: 45%;
+	position:relative;
+	z-index:10;
+}
+.about-box .left-content p,.about-box .right-content p{
+	margin-bottom: 35px;
+}
+.about-box .image{
+	position:absolute;
+    bottom: -270px;
+	z-index:8;
+}
+.about-box .animted-title{
+    position: absolute;
+    bottom: -175px;
+    z-index: 7;
+    left: 27%;
+}
+.about-box .animted-title img{
+	width: 1386px;
+	height: 159px;
+}
+.about-box .image img{
+	width: 332px;
+	height: 464px;
+	border-radius: 16px 16px 16px 0px;
+	object-fit:cover;
+	object-position:center;
+}
+.about-box .right-content{
+	padding-top:80px;
+}
+
+/* Documents Box */
+.documents-box{
+	padding:140px 0;
+}
+.documents-box h2{
+	margin-top:0;
+}
+.documents-box .content{
+	width:59%;
+}
+.documents-parent{
+	margin-top:50px;
+	display:flex;
+	justify-content:space-between;
+	align-items:center;
+	flex-wrap:wrap;
+	column-gap:1rem;
+	row-gap:1rem;
+}
+.documents-parent .downlod-btn{
+	border: 2px solid #304995;
+	box-shadow: 0px 6px 16px 0px #0A1B4605;
+	background: #FFFEFB;
+    padding: 14px 8px 14px 24px;
+	border-radius: 8px 8px 8px 0px;
+	width:calc(45% - 32px);
+	position:relative;
+	line-height: 32.4px;
+	color: #0A1B46;
+	transition:all .25s ease-in-out;
+}
+.documents-parent .downlod-btn:hover{
+	background: #304995;
+	color: #fff;
+}
+.documents-parent .downlod-btn:after{
+	content: '';
+    width: 25px;
+    height: 32px;
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translate(0, -50%);
+    background-image: url(https://dev.logo4life.nl/abs/wp-content/uploads/2024/06/Document-Download-cropped.svg);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.documents-parent .downlod-btn:hover:after{
+    filter: brightness(0%) invert(1);
+}
+
+/* Footer */
+.site-footer{
+	background-color:#0A1B46;
+	position:relative;
+}
+.site-footer:after{
+    content:'';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translate(-50%, 0);
+    width: 990px;
+    height: 360px;
+	background-image:url(https://dev.logo4life.nl/abs/wp-content/uploads/2024/06/Ellipse-5.svg);
+	background-size:contain;
+	background-repeat:no-repeat;
+	background-position: center bottom;
+
+}
+.site-footer .footer-top-panel{
+	display:flex;
+	flex-wrap:wrap;
+	justify-content:space-between;
+    padding: 135px 0 70px;
+	border-bottom: 1px solid #F7F5ED;
+}
+.site-footer .footer-top-panel .footer-newsletter,.site-footer .footer-top-panel .right{
+	width:40%;
+}
+.site-footer .footer-newsletter .title,.site-footer .right h2{
+	font-size: 24px;
+	font-weight: 400;
+	line-height: 31.2px;
+	letter-spacing: 0.04em;
+	color:#F7F5ED;
+	margin-top:0;
+}
+.site-footer .footer-newsletter .newsletter-form-content{
+	font-style: italic;
+	line-height: 27px;
+	margin-top: -12px;
+	color:#F7F5ED;
+}
+.site-footer .footer-newsletter .content{
+	color:#F7F5ED;
+}
+.newsletter-form .input{
+    padding-right: 5px;
+    display: inline-block;
+    vertical-align: top;
+    margin-right: -5px;
+}
+.newsletter-form .input p{
+	margin:0;
+}
+.newsletter-form .input input{
+    padding: 14px 10px 14px 16px;
+    border-radius: 8px 8px 0px 8px;
+    background: #F7F5ED;
+    border: 1px solid #F7F5ED;
+    color: #304995;
+	outline:none;
+    width: calc(100% - 29px);
+}
+.newsletter-form .input input:focus{
+	outline:none;
+}
+.newsletter-form .btn-submit{
+	width:131px;
+	display: inline-block;
+    vertical-align: top;
+    margin-right: -5px;
+}
+.newsletter-form .btn-submit p{
+	margin:0;
+}
+.newsletter-form .btn-submit input{
+	color:#192D60;
+	background: #84DAFF;
+	padding: 12px 24px 12px 24px;
+	border-radius: 8px 8px 8px 0px;
+	font-family: "neue-haas-grotesk-display", sans-serif;
+	font-size: 16px;
+	font-weight: 600;
+	line-height: 19.2px;
+	letter-spacing: 0.04em;
+	display:inline-block;
+	border:none;
+	min-height: 45px;
+}
+#navigatie-menu{
+	margin:0;
+	padding:0;
+	list-style-type:none;
+}
+#navigatie-menu li a{
+	font-size: 18px;
+	font-weight: 500;
+	line-height: 47.4px;
+	letter-spacing: 0.02em;
+	color: #F7F5ED;
+}
+.footer-top-panel .contact-info p,.footer-top-panel .contact-info p a{
+	line-height: 47.4px;
+	color: #F7F5ED;
+	margin:0;
+}
+.footer-bottom-panel{
+	padding:60px 0;
+	justify-content:space-between;
+	align-items:end;
+}
+.footer-bottom-panel .legal-nav{
+	display:flex;
+	justify-content:end;
+	align-items:center;
+}
+#legal-menu{
+	margin:0;
+	padding:0;
+	list-style-type:none;
+}
+#legal-menu li{
+	display:inline-block;
+	padding:0 15px;
+}
+#legal-menu li:last-child{
+	padding-right:0;
+}
+#legal-menu li:first-child{
+	padding-left:0;
+}
+#legal-menu li a,.copyrights p{
+	font-size: 18px;
+	font-weight: 500;
+	line-height: 32.4px;
+	letter-spacing: 0.02em;
+	color: #F7F5ED;
+}
+.nav-legal{
+	padding-right:30px;
+}
+.copyrights p{
+	margin:0;
+}
