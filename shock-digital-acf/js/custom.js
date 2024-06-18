@@ -26,4 +26,86 @@ jQuery(document).ready(function($) {
     $('.mobsluiten').click(function(){
         $(".mobilemenu-container").toggleClass('show');
     });
+
+	var data = {
+        action: 'fetch_external_data',
+        security: ajax_obj.nonce
+    };
+
+    $.post(ajax_obj.ajax_url, data, function(response) {
+        if(response.success) {
+            // $('#result').html(response.data);
+			$(".funds-box img").hide();
+			$("#abs-chart-container").show();
+			const chart = Highcharts.chart('abs-chart-container', {
+				chart: {
+					type: 'line'
+				},
+				title: {
+					text: '',
+					align: 'left',
+					x: 0,
+					y: 10,
+					style: {
+						fontFamily: '"neue-haas-grotesk-display", sans-serif',
+						fontWeight: 'normal',
+						fontSize: '1.75em'
+					}
+				},
+				xAxis: {
+					type: 'datetime',
+					title: {
+						text: ''
+					}
+				},
+				yAxis: {
+					title: {
+						text: ''
+					},
+					labels: {
+						formatter: function () {
+							return this.value + '%';
+						}
+					}
+				},
+				series: [{
+					name: 'ABS Fund',
+					data: JSON.parse(response.data).data
+				}],
+				credits: {
+					enabled: false
+				},
+				legend: {
+					layout: 'vertical',
+					align: 'right',
+					verticalAlign: 'top',
+					x: -10,
+					y: 10,
+					floating: true,
+					itemStyle: {
+						fontSize: '16px',
+						fontWeight: 'bold',
+						fontFamily: '"neue-haas-grotesk-display", sans-serif',
+					}
+				},
+				tooltip: {
+					valueDecimals: 2
+				}
+			});
+			
+			Highcharts.setOptions({
+				lang: {
+					months: ['januari', 'februari', 'maart', 'april', 'mei', 'juni', 'juli', 'augustus', 'september', 'oktober', 'november', 'december'],
+					weekdays: ['zondag', 'maandag', 'dinsdag', 'woensdag', 'donderdag', 'vrijdag', 'zaterdag'],
+					decimalPoint: ',',
+					thousandsSep: '.',
+					numericSymbols: null
+				}
+			});
+			
+        } else {
+            // $('#result').html('Error: ' + response.data);
+			debugger;
+        }
+    });
 });

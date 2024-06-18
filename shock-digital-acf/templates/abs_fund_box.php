@@ -17,6 +17,12 @@ $marginb	 =	 get_sub_field('margin_bottom');
 	<div class="container">
 		<div class="funds-content-inner">
 			<img src="<?=$image?>">
+			<div class="abs-chart-container-panel">
+				<div id="abs-chart-container">
+				
+				</div>
+				<div class="chart-title">Rendement ABS Fonds</div>
+			</div>
 			<div class="button-wrap">
 				<a class="button dark" href="<?php echo esc_url($button['url']); ?>" target="<?php echo esc_attr($button['target']); ?>">
 					<?php echo esc_html($button['title']); ?>

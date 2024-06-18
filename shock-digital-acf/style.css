@@ -368,7 +368,7 @@ img{
 	text-align:center;
 }
 .funds-box .funds-content-inner .button-wrap{
-	margin-top: -45px;
+	margin-top: -25px;
 }
 
 /* Image Box */
@@ -807,7 +807,33 @@ header .mobielmenu{
 {
 	transition-delay: 0.4s;
 }
+#abs-chart-container{
+	border-radius: 20px 20px 20px 0px;
+	border: solid 2px #0A1B46;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+    padding: 50px 20px;
+    background-color: white;
+	display: none;
+}
 
+.highcharts-title::after{
+	width: 36px;
+	height: 2px;
+	background: #304995;
+	content: '';
+	position: absolute;
+	left: 0;
+	bottom: 0;
+}
+.abs-chart-container-panel .chart-title
+{
+	position: absolute;
+    z-index: 99995;
+    top: 45px;
+    left: 33px;
+    font-size: 1.75rem;
+    font-weight: normal;
+}
 /* 1900 : 1386 100vw :  */
 @media (max-width: 1900px) {
 	.about-box .animted-title img{
