@@ -18,4 +18,12 @@ jQuery(document).ready(function($) {
 	});
 
 	$('.tab.active img').attr('src', activeIconUrl);
+
+	$('header .mobielmenu').click(function(){
+        $(".mobilemenu-container").toggleClass('show');
+    });
+
+    $('.mobsluiten').click(function(){
+        $(".mobilemenu-container").toggleClass('show');
+    });
 });

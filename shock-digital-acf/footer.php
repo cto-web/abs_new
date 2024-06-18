@@ -40,6 +40,26 @@
 		</div>
 	</div>
 </footer>
+
+<div class="mobilemenu-container">
+	<div style="text-align:right"><div class="mobsluiten"></div></div>
+
+	<div class="menucontainer">
+		<?php
+
+		wp_nav_menu( array( 
+
+			'theme_location' => 'mobile', 
+			'container_class' => 'mobilemenu' ) 
+
+		); 
+
+		?>
+		
+	</div>
+
+</div>
+
 </body>
 </html>
 <?php wp_footer(); ?>

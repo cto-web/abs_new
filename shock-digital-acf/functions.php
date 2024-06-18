@@ -49,6 +49,7 @@ function register_my_menus() {
       'primary' => __('Hoofdmenu'),
       'legal' => __('Legal Menu'),
 	  'navigatie' => __('Navigatie Menu'),
+      'mobile' => __('Mobile Menu'),
     )
   );
 }
