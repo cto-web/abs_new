@@ -1,3 +1,15 @@
+function parseNumber(value) {
+	return value.replace('.', ',');
+}
+
+function addSignToNumber(number) {
+    if (number > 0) {
+        return '+' + number;
+    } else {
+        return number;
+    }
+}
+
 jQuery(document).ready(function($) {
 	var activeIconUrl = 'https://dev.logo4life.nl/abs/wp-content/uploads/2024/06/icon-active.svg';
 	$('.tab img').each(function() {
@@ -37,15 +49,21 @@ jQuery(document).ready(function($) {
             // $('#result').html(response.data);
 			$(".funds-box img").hide();
 			$("#abs-chart-container").show();
+			$(".abs-chart-container-panel .chart-title").show();
+			var data = JSON.parse(response.data).data;
+			var first_y = data[0][1]; 
 			const chart = Highcharts.chart('abs-chart-container', {
 				chart: {
-					type: 'line'
+					type: 'line',
+					marginTop: 30
 				},
 				title: {
+					margin: 100,
 					text: '',
 					align: 'left',
 					x: 0,
 					y: 10,
+					
 					style: {
 						fontFamily: '"neue-haas-grotesk-display", sans-serif',
 						fontWeight: 'normal',
@@ -63,14 +81,16 @@ jQuery(document).ready(function($) {
 						text: ''
 					},
 					labels: {
+
 						formatter: function () {
-							return this.value + '%';
+							var increase = (this.value - first_y) / first_y * 100 ; 
+							return increase.toFixed(2) + '%';
 						}
 					}
 				},
 				series: [{
 					name: 'ABS Fund',
-					data: JSON.parse(response.data).data
+					data: data
 				}],
 				credits: {
 					enabled: false
@@ -80,7 +100,7 @@ jQuery(document).ready(function($) {
 					align: 'right',
 					verticalAlign: 'top',
 					x: -10,
-					y: 10,
+					y: -20,
 					floating: true,
 					itemStyle: {
 						fontSize: '16px',
@@ -89,7 +109,13 @@ jQuery(document).ready(function($) {
 					}
 				},
 				tooltip: {
-					valueDecimals: 2
+					valueDecimals: 2,
+					pointFormatter: function() {
+						var increase = (this.y - first_y) / first_y * 100 ; 
+						increase = parseNumber(addSignToNumber(increase.toFixed(2)));
+			
+						return '<span style="color:' + this.color + '">\u25CF</span> ' + this.series.name + ': <b>' + parseNumber(this.y.toFixed(2)) + " (" + increase + '%)</b><br/>';
+					}
 				}
 			});
 			

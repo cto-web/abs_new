@@ -811,28 +811,30 @@ header .mobielmenu{
 	border-radius: 20px 20px 20px 0px;
 	border: solid 2px #0A1B46;
     box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
-    padding: 50px 20px;
+    padding: 80px 50px 60px;
     background-color: white;
 	display: none;
 }
 
-.highcharts-title::after{
-	width: 36px;
-	height: 2px;
-	background: #304995;
-	content: '';
+.abs-chart-container-panel .chart-title{
 	position: absolute;
-	left: 0;
-	bottom: 0;
+	font-weight: 'normal';
+	font-size: 1.75rem;
+    z-index: 99995;
+	top: 35px;
+    left: 65px;
+	display: none;
 }
-.abs-chart-container-panel .chart-title
+.abs-chart-container-panel .chart-title::after
 {
+	content : '';
 	position: absolute;
     z-index: 99995;
-    top: 45px;
-    left: 33px;
-    font-size: 1.75rem;
-    font-weight: normal;
+    top: 35px;
+    left: 0px;
+    background: #304995;
+    height: 2px;
+    width: 35px;
 }
 /* 1900 : 1386 100vw :  */
 @media (max-width: 1900px) {
@@ -906,7 +908,7 @@ header .mobielmenu{
 		width: 50%;
 	}
 	.about-box .animted-title img{
-		width: 100%;
+		width: 200%;
 	}
 	.documents-box .content{
 		width: 100%;
