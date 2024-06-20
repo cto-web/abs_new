@@ -138,23 +138,35 @@ img{
 /* Header */
 .site-header{
 	padding:1rem 0;
-	background: #0A1B46;
+	/*background: #0A1B46;*/
+	position:fixed;
+	top:0;
+	left:0;
+	width:100%;
+	z-index:999;
+	transition: all 0.5s ease;
+}
+.site-header.background {
+	background-color:#0A1B46;
+}
+.logged-in .site-header {
+	top:32px;
 }
 .site-header .head-logo .logo{
 	font-size: 42px;
-	font-weight: 600;
+	font-weight: 400;
 	line-height: 63px;
 	letter-spacing: 0.02em;
 	display:block;
 	color:#fff;
 	text-transform:uppercase;
 	line-height: 1;
-    margin-bottom: 5px;
+    margin-bottom: 0px;
 }
 .site-header .head-logo .slogan{
-	font-size: 14px;
+	font-size: 11px;
 	font-weight: 500;
-	line-height: 25.2px;
+	line-height: 20px;
 	letter-spacing: 0.02em;
 	color:#fff;
 	text-transform:uppercase;
@@ -267,9 +279,10 @@ img{
 	position:relative;
 	z-index:2;
     margin-bottom: 300px;
-}
-.hero-box .hero-parents{
 	background: #0A1B46;
+	padding-top:110px;
+}
+.hero-box .hero-parents{	
 	position:relative;
 	z-index:3;
 }
@@ -285,7 +298,7 @@ img{
 	position:absolute;
     bottom: -300px;
 	left:0;
-	z-index:1;
+	z-index:0;
 }
 .hero-box .title,.hero-box .list li,.hero-box .content{
 	color:#fff;
@@ -306,7 +319,7 @@ img{
 	height: 633px;
 	top: -112px;
 	left: 0;
-	z-index: 5;
+	z-index: 1;
 }
 .hero-box:after{
 	content:url(https://dev.logo4life.nl/abs/wp-content/uploads/2024/06/Ellipse-2.svg);
@@ -315,7 +328,7 @@ img{
 	height: 476px;
 	top: -112px;
 	right: 0;
-	z-index: 5;
+	z-index: 1;
 }
 .hero-content-inner{
 	width:928px;
@@ -490,7 +503,7 @@ img{
 }
 .about-box .animted-title{
     position: absolute;
-    bottom: -175px;
+    bottom: -90px;
     z-index: 7;
     left: 27%;
 }
@@ -598,11 +611,13 @@ img{
 	color:#F7F5ED;
 	margin-top:0;
 }
-.site-footer .footer-newsletter .newsletter-form-content{
-	font-style: italic;
-	line-height: 27px;
+.site-footer .footer-newsletter .newsletter-form-content{	
+	line-height: 22px;
 	margin-top: -12px;
 	color:#F7F5ED;
+	font-size: 13px;
+    font-weight: normal;
+    opacity: .7;
 }
 .site-footer .footer-newsletter .content{
 	color:#F7F5ED;
@@ -807,34 +822,73 @@ header .mobielmenu{
 {
 	transition-delay: 0.4s;
 }
-#abs-chart-container{
+.abs-chart-container-panel {
 	border-radius: 20px 20px 20px 0px;
 	border: solid 2px #0A1B46;
     box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
-    padding: 80px 50px 60px;
+    padding: 50px 50px 60px;
     background-color: white;
-	display: none;
 }
-
-.abs-chart-container-panel .chart-title{
-	position: absolute;
+#abs-chart-container{
+	width:100%;
+	box-sizing:border-box;
+	height:400px;
+}
+.abs-chart-container-panel-header {
+	display:flex;
+	margin-bottom:25px;
+	justify-content: space-between;
+}
+@media screen and (max-width:600px) {
+	.abs-chart-container-panel-header { 
+	display:block;
+	text-align:left;
+	}
+	.abs-chart-container-panel .chart-title {
+	margin-bottom:25px;	
+	}
+}
+.abs-chart-container-panel .chart-title {
+	/*position: absolute;*/
 	font-weight: 'normal';
 	font-size: 1.75rem;
-    z-index: 99995;
+	position:relative;
+    /*z-index: 99995;
 	top: 35px;
-    left: 65px;
-	display: none;
+    left: 65px;*/
+	/*display: none;*/
 }
 .abs-chart-container-panel .chart-title::after
 {
 	content : '';
 	position: absolute;
     z-index: 99995;
-    top: 35px;
+    top: 40px;
     left: 0px;
     background: #304995;
     height: 2px;
     width: 35px;
+}
+.abs-chart-container-panel .chart-legend { 
+	/*right:60px;
+	top:40px;*/
+	font-family: "neue-haas-grotesk-display", sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+	/*position:absolute;*/
+	position:relative;
+	padding-left:15px;
+}
+.abs-chart-container-panel .chart-legend::before {
+	content: '';
+	display:block;
+	width:10px;
+	height:10px;
+	border-radius:10px;
+	position:absolute;
+	top:10px;
+	left:0;
+	background-color:#84DAFF;
 }
 /* 1900 : 1386 100vw :  */
 @media (max-width: 1900px) {

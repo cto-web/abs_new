@@ -10,7 +10,40 @@ function addSignToNumber(number) {
     }
 }
 
+
 jQuery(document).ready(function($) {
+	
+	// Initialize the ScrollMagic controller
+	var controller = new ScrollMagic.Controller();
+
+	// Target the element
+	var target = document.querySelector('.about-box .animted-title');
+	var trigger = document.querySelector('.about-box .animted-title');
+
+	// Create a Tween using GSAP
+	var tween = gsap.fromTo(target, 
+		{ left: '-5%' }, 
+		{ left: '32%', ease: "none" });
+
+	// Create a ScrollMagic Scene
+	var scene = new ScrollMagic.Scene({
+		triggerElement: trigger, // Starting when the element comes into view
+		duration: '100%', // Animation will complete in the next 100% of the viewport height
+		triggerHook: 1 // Starts at the middle of the viewport
+	})
+	.setTween(tween) // Apply the GSAP animation
+	.addTo(controller); // Add this scene to the ScrollMagic controller
+
+	
+	
+	window.addEventListener('scroll', function() { 
+	 if(window.scrollY > 200) {
+	  $(".site-header").addClass("background");
+	 } else {
+	  $(".site-header").removeClass("background");
+	 }
+	});
+	
 	var activeIconUrl = 'https://dev.logo4life.nl/abs/wp-content/uploads/2024/06/icon-active.svg';
 	$('.tab img').each(function() {
 		$(this).data('original-src', $(this).attr('src'));
@@ -28,6 +61,8 @@ jQuery(document).ready(function($) {
 		$('.tab-content').removeClass('active');
 		$('#' + tabId).addClass('active');
 	});
+	
+	
 
 	$('.tab.active img').attr('src', activeIconUrl);
 
@@ -47,9 +82,9 @@ jQuery(document).ready(function($) {
     $.post(ajax_obj.ajax_url, data, function(response) {
         if(response.success) {
             // $('#result').html(response.data);
-			$(".funds-box img").hide();
-			$("#abs-chart-container").show();
-			$(".abs-chart-container-panel .chart-title").show();
+			//$(".funds-box img").hide();
+			//$("#abs-chart-container").show();
+			//$(".abs-chart-container-panel .chart-title").show();
 			var data = JSON.parse(response.data).data;
 			var first_y = data[0][1]; 
 			const chart = Highcharts.chart('abs-chart-container', {
@@ -96,6 +131,7 @@ jQuery(document).ready(function($) {
 					enabled: false
 				},
 				legend: {
+					enabled: false,
 					layout: 'vertical',
 					align: 'right',
 					verticalAlign: 'top',
