@@ -23,10 +23,6 @@ body{
 	background-color:#F7F5ED;
 	overflow-x:hidden;
 }
-img{
-	width:100%;
-	height:auto;
-}
 ul{
 	margin:0;
 	padding-left: 20px;
@@ -34,6 +30,12 @@ ul{
 ul li::marker {
 	color: #0A1B46;
 }
+
+img{
+	width:100%;
+	height:auto;
+}
+
 a{
 	text-decoration:none;
 	color:#733C74;
